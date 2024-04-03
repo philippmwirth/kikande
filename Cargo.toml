@@ -1,0 +1,27 @@
+[package]
+name = "kikande"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+clap = { version = "4.5.4", features = ["derive"] }
+lazy_static = "1.4.0"
+rand = "0.8.5"
+regex = "1.10.4"
+rustc-hash = "1.1.0"
+thiserror = "1.0.58"
+thread-id = "4.2.1"
+
+[profile.release]
+debug = 1
+lto = true
+
+[lib]
+name = "kikande"
+path = "src/lib.rs"
+
+[[bin]]
+name = "kikande"
+path = "src/main.rs"
